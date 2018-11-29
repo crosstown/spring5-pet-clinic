@@ -1,4 +1,4 @@
-package com.crosstown.spring5petclinic;
+package spring5petclinic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
