@@ -5,7 +5,7 @@ package com.crosstown.spring5petclinic.model;
  * @date 2018-11-28
  * @time 10:32
  */
-public class Person {
+public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
 
