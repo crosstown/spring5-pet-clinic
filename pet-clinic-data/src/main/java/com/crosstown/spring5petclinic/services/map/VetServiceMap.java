@@ -1,7 +1,7 @@
 package com.crosstown.spring5petclinic.services.map;
 
 import com.crosstown.spring5petclinic.model.Vet;
-import com.crosstown.spring5petclinic.services.CrudService;
+import com.crosstown.spring5petclinic.services.VetService;
 
 import java.util.Set;
 
@@ -11,7 +11,7 @@ import java.util.Set;
  * @time 21:32
  */
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
