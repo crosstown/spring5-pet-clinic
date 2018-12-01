@@ -2,6 +2,7 @@ package com.crosstown.spring5petclinic.services.map;
 
 import com.crosstown.spring5petclinic.model.Pet;
 import com.crosstown.spring5petclinic.services.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import java.util.Set;
  * @date 2018-11-29
  * @time 21:42
  */
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
 
     @Override

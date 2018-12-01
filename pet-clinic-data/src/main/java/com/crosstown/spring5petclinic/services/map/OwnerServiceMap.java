@@ -2,6 +2,7 @@ package com.crosstown.spring5petclinic.services.map;
 
 import com.crosstown.spring5petclinic.model.Owner;
 import com.crosstown.spring5petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import java.util.Set;
  * @date 2018-11-29
  * @time 21:18
  */
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
