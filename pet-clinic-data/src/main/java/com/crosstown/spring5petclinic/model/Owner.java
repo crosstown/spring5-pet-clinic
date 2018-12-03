@@ -1,5 +1,7 @@
 package com.crosstown.spring5petclinic.model;
 
+import java.util.Set;
+
 /**
  * @author developer
  * @date 2018-11-28
@@ -7,4 +9,13 @@ package com.crosstown.spring5petclinic.model;
  */
 public class Owner extends Person {
 
+    private Set<Pet> pets;
+
+    public Set<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
+    }
 }
