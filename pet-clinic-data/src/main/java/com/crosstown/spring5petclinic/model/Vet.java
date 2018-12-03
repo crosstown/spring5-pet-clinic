@@ -1,5 +1,6 @@
 package com.crosstown.spring5petclinic.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,9 +9,15 @@ import java.util.Set;
  * @date 2018-11-28
  * @time 10:37
  */
+@Entity
+@Table(name = "vets")
 public class Vet extends Person {
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinTable (name = "vet_specialty", joinColumns = @JoinColumn(name = "vet_id"),
+            inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialties = new HashSet<>();
+
 
     public Set<Specialty> getSpecialties() {
         return specialties;
