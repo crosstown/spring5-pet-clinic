@@ -2,7 +2,7 @@
      @date   2018-12-01
      @time   01:43 -->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="ttp://thymeleaf.org">
+<html lang="en" xmlns:th="ttp://thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
     <meta charset="UTF-8">
     <title>List of Vets</title>
@@ -10,9 +10,9 @@
 <body>
 <!--/*@thymesVar id="vets" type=com.crosstown.spring5petclinic.model.Vet"*/-->
 
-    <h1 th:text="'List of Vets'">List of Vets...</h1>
+    <h2 th:text="'List of Vets'">List of Vets...</h2>
 
-    <table>
+    <table id="vets" class="table table-striped">
         <thead>
         <tr>
             <th>Id</th>
