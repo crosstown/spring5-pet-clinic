@@ -1,7 +1,7 @@
 package com.crosstown.spring5petclinic.services.map;
 
 import com.crosstown.spring5petclinic.model.Specialty;
-import com.crosstown.spring5petclinic.services.SpecialtiesService;
+import com.crosstown.spring5petclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,7 +12,7 @@ import java.util.Set;
  * @time 00:28
  */
 @Service
-public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override
     public Set<Specialty> findAll() {

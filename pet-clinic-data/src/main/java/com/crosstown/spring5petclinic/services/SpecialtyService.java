@@ -7,6 +7,6 @@ import com.crosstown.spring5petclinic.model.Specialty;
  * @date 2018-12-04
  * @time 00:30
  */
-public interface SpecialtiesService extends CrudService<Specialty, Long> {
+public interface SpecialtyService extends CrudService<Specialty, Long> {
 
 }
