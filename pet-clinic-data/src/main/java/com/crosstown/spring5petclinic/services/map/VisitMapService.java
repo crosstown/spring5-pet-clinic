@@ -2,6 +2,7 @@ package com.crosstown.spring5petclinic.services.map;
 
 import com.crosstown.spring5petclinic.model.Visit;
 import com.crosstown.spring5petclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import java.util.Set;
  * @date 2018-12-04
  * @time 01:55
  */
-
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
 

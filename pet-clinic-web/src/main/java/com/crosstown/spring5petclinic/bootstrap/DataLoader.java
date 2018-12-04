@@ -1,10 +1,7 @@
 package com.crosstown.spring5petclinic.bootstrap;
 
 import com.crosstown.spring5petclinic.model.*;
-import com.crosstown.spring5petclinic.services.OwnerService;
-import com.crosstown.spring5petclinic.services.PetTypeService;
-import com.crosstown.spring5petclinic.services.SpecialtyService;
-import com.crosstown.spring5petclinic.services.VetService;
+import com.crosstown.spring5petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -22,15 +19,18 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-                      SpecialtyService specialtyService) {
+                      SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
-
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
+
+
 
 
     @Override
@@ -95,6 +95,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded owners...");
 
