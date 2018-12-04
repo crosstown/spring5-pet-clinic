@@ -4,6 +4,7 @@ import com.crosstown.spring5petclinic.model.Specialty;
 import com.crosstown.spring5petclinic.model.Vet;
 import com.crosstown.spring5petclinic.services.SpecialtyService;
 import com.crosstown.spring5petclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -14,6 +15,7 @@ import java.util.Set;
  * @time 21:32
  */
 @Service
+@Profile({"default", "map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialtyService specialtyService;
