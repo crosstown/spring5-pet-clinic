@@ -8,8 +8,10 @@ import com.crosstown.spring5petclinic.services.PetService;
 import com.crosstown.spring5petclinic.services.PetTypeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -24,6 +26,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@ExtendWith(MockitoExtension.class)
 class PetControllerTest {
 
     @Mock
@@ -76,8 +79,8 @@ class PetControllerTest {
         when(ownerService.findById(anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
-        mockMvc.perform(post("owners/1/pets/new"))
-                .andExpect(status().isOk())
+        mockMvc.perform(post("/owners/1/pets/new"))
+                .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"));
 
         verify(petService).save(any());
